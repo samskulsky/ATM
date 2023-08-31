@@ -73,7 +73,7 @@ public class ATM {
         return success;
     }
 
-    public void Audit() throws IOException {
+    public void audit() throws IOException {
         FileWriter fw = new FileWriter("AccountAudit.txt", false);
         PrintWriter pw = new PrintWriter(fw);
 
