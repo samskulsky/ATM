@@ -79,8 +79,7 @@ public class ATM {
 
         for (int i = 0; i < accounts.keySet().size(); i++) {
             String id = accounts.keySet().toArray(new String[0])[i];
-            pw.println(id);
-            pw.println(accounts.get(id));
+            pw.println(id + " " + accounts.get(id));
         }
 
         pw.close();
