@@ -1,3 +1,6 @@
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.HashMap;
 
 public class ATM {
@@ -68,6 +71,20 @@ public class ATM {
         }
 
         return success;
+    }
+
+    public void Audit() throws IOException {
+        FileWriter fw = new FileWriter("AccountAudit.txt", false);
+        PrintWriter pw = new PrintWriter(fw);
+
+        for (int i = 0; i < accounts.keySet().size(); i++) {
+            String id = accounts.keySet().toArray(new String[0])[i];
+            pw.println(id);
+            pw.println(accounts.get(id));
+        }
+
+        pw.close();
+        fw.close();
     }
 
 }
